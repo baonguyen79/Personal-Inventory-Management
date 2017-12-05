@@ -3,6 +3,9 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Personal_Inventory_Management.DataModels;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Collections.Generic;
 
 namespace Personal_Inventory_Management.Models
 {
@@ -16,12 +19,15 @@ namespace Personal_Inventory_Management.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual List<ItemHeader> Items { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("InventoryConnection", throwIfV1Schema: false)
         {
         }
 
@@ -29,5 +35,17 @@ namespace Personal_Inventory_Management.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<ItemHeader> ItemHeader { get; set; }
+        public DbSet<ItemDetail> ItemDetail { get; set; }
+        public DbSet<ItemHistory> ItemHistory { get; set; }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        //    base.OnModelCreating(modelBuilder);
+        //}
+
+
     }
 }
