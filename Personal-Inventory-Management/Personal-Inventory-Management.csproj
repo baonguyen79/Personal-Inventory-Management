@@ -190,11 +190,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemHeadersController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DataModels\ItemDetail.cs" />
     <Compile Include="DataModels\ItemHeader.cs" />
     <Compile Include="DataModels\ItemHistory.cs" />
-    <Compile Include="DataModels\ItemInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -206,8 +206,29 @@
     <Compile Include="Migrations\201712021917139_Initial.Designer.cs">
       <DependentUpon>201712021917139_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712050022340_fix ItemDetail.cs" />
+    <Compile Include="Migrations\201712050022340_fix ItemDetail.Designer.cs">
+      <DependentUpon>201712050022340_fix ItemDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712050104336_fix2.cs" />
+    <Compile Include="Migrations\201712050104336_fix2.Designer.cs">
+      <DependentUpon>201712050104336_fix2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712050219206_fix db.cs" />
+    <Compile Include="Migrations\201712050219206_fix db.Designer.cs">
+      <DependentUpon>201712050219206_fix db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712050308237_add require.cs" />
+    <Compile Include="Migrations\201712050308237_add require.Designer.cs">
+      <DependentUpon>201712050308237_add require.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712050314114_add required.cs" />
+    <Compile Include="Migrations\201712050314114_add required.Designer.cs">
+      <DependentUpon>201712050314114_add required.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CreateItemHeader.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -270,6 +291,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\ItemHeaders\Create.cshtml" />
+    <Content Include="Views\ItemHeaders\Delete.cshtml" />
+    <Content Include="Views\ItemHeaders\Details.cshtml" />
+    <Content Include="Views\ItemHeaders\Edit.cshtml" />
+    <Content Include="Views\ItemHeaders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -295,6 +321,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712021917139_Initial.resx">
       <DependentUpon>201712021917139_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712050022340_fix ItemDetail.resx">
+      <DependentUpon>201712050022340_fix ItemDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712050104336_fix2.resx">
+      <DependentUpon>201712050104336_fix2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712050219206_fix db.resx">
+      <DependentUpon>201712050219206_fix db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712050308237_add require.resx">
+      <DependentUpon>201712050308237_add require.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712050314114_add required.resx">
+      <DependentUpon>201712050314114_add required.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

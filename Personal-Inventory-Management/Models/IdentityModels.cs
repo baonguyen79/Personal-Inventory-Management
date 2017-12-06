@@ -20,7 +20,7 @@ namespace Personal_Inventory_Management.Models
             return userIdentity;
         }
 
-        public virtual List<ItemHeader> Items { get; set; }
+        public virtual ICollection<ItemHeader> ItemHeaders { get; set; }
 
     }
 
@@ -40,11 +40,11 @@ namespace Personal_Inventory_Management.Models
         public DbSet<ItemDetail> ItemDetail { get; set; }
         public DbSet<ItemHistory> ItemHistory { get; set; }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-        //    base.OnModelCreating(modelBuilder);
-        //}
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            base.OnModelCreating(modelBuilder);
+        }
 
 
     }
